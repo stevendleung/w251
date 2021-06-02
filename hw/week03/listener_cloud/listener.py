@@ -27,7 +27,7 @@ def save_img(img_bytes):
 
 def on_connect_local(client, userdata, flags, rc):
         print("connected to local broker with rc: " + str(rc))
-        client.subscribe(LOCAL_MQTT_TOPIC)
+        client.subscribe(LOCAL_MQTT_TOPIC, qos=1)
 	
 def on_message(client,userdata, msg):
   try:
