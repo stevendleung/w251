@@ -3,8 +3,8 @@ import numpy as np
 import cv2
   
 
-LOCAL_MQTT_HOST="localhost"
-LOCAL_MQTT_PORT=31369
+LOCAL_MQTT_HOST="mosquitto-service"
+LOCAL_MQTT_PORT=1883
 LOCAL_MQTT_TOPIC="test_topic"
 
 def on_connect_local(client, userdata, flags, rc):
@@ -39,7 +39,7 @@ while(True):
     msg = png.tobytes()
 
     #publish the message
-    local_mqttclient.publish(LOCAL_MQTT_TOPIC,msg)
+    local_mqttclient.publish(LOCAL_MQTT_TOPIC,msg, qos=1)
 
     #if cv2.waitKey(1) & 0xFF == ord('q'):
     #    break
