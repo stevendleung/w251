@@ -2,8 +2,8 @@ import paho.mqtt.client as mqtt
 import boto3
 
 s3client = boto3.client('s3',
-    aws_access_key_id='AKIATWUYNBXCZWGFH3OJ',
-    aws_secret_access_key='N0OYDFJ4mG8G8EVFka8VyZ5msOVOAUrJgCbXzhzU')
+    aws_access_key_id=YOUR_KEY,
+    aws_secret_access_key=YOUR_SECRET_KEY)
 
 LOCAL_MQTT_HOST="mqtt"
 LOCAL_MQTT_PORT= 1883
